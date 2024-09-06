@@ -1,3 +1,7 @@
+
+A endless onchain game that is always ready for players to play. The game is - What would the average of everyone's number be?
+
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
