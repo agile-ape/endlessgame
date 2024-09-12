@@ -25,6 +25,11 @@ contract Endless {
 
     mapping(uint256 => GameSettings) public gameIdToGameSettings;
 
+    mapping(uint256 => uint256[]) public gameIdToNumberArray;
+
+    function getGameArrayLength(uint256 _gameId) public view returns (uint256) {
+        return gameIdToNumberArray[_gameId].length;
+    }
     struct GameSettings {
         uint256 ticketPrice;
         uint256 winnersShare;
@@ -224,6 +229,7 @@ contract Endless {
 
         // assign to mapping
         gameIdToTicketIdToTicket[gameId][ticketId] = newTicket;
+        gameIdToNumberArray[gameId].push(_number);
         gameIdToPlayerToIdArray[gameId][msg.sender].push(ticketId); // player can have many tickets
 
 
